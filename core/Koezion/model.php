@@ -1045,6 +1045,7 @@ class Model extends Object {
  * @access	public
  * @author	koéZionCMS
  * @version 0.1 - 26/08/2012 by FI
+ * @version 0.2 - 04/03/2015 by AJ Rajout d'une condition pour verifier si la page est bien en ligne
  */
 	public function make_search_index($datasToSave, $id, $action) {
 		
@@ -1088,20 +1089,23 @@ class Model extends Object {
 			//En cas de mise à jour on supprime l'ancienne valeur
 			if($action == "update") { $this->delete_search_index($id); }
 			
-			///////////////////////////////////////
-			//Sauvegarde des données de recherche//
-			$searchDatas = array(
-				'model' => get_class($this),
-				'title' => $datasToSave[':page_title'],
-				'description' => $datasToSave[':page_description'],
-				'datas' => strip_tags($searchesDatas),
-				'url' => $url,
-				'model_id' => $id				
-			);		
-			require_once(MODELS.DS.'search.php'); //Chargement du model
-			$search = new Search();		
-			$search->save($searchDatas);
-			unset($search); //Déchargement du model
+			if($datasToSave[':online'] == 1) {
+				
+				///////////////////////////////////////
+				//Sauvegarde des données de recherche//
+				$searchDatas = array(
+					'model' => get_class($this),
+					'title' => $datasToSave[':page_title'],
+					'description' => $datasToSave[':page_description'],
+					'datas' => strip_tags($searchesDatas),
+					'url' => $url,
+					'model_id' => $id				
+				);		
+				require_once(MODELS.DS.'search.php'); //Chargement du model
+				$search = new Search();		
+				$search->save($searchDatas);
+				unset($search); //Déchargement du model
+			}
 		}
 	}	
 	
