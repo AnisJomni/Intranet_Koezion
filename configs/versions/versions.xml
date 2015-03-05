@@ -1,5 +1,13 @@
 ﻿<versions>
 	<version>
+		<name>Version du 05/03/2015</name>
+		<num>20150305.001</num>
+		<supervisor>KoéZionCMS</supervisor>
+		<tasks>
+			<task author="AJ" type="code">Rajout de la fonction "get_post_infos"" dans le controller "posts_controller" pour récupérer les informations d'un article</task>
+		</tasks>
+	</version>
+	<version>
 		<name>Version du 11/02/2015</name>
 		<num>20150211.001</num>
 		<supervisor>KoéZionCMS</supervisor>
