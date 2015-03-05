@@ -1238,7 +1238,7 @@ class AppController extends Controller {
 				//   SAUVEGARDE DANS LA BASE DE DONNEES   //
     			$this->request->data['post_id'] = $vars['post']['id'];
     			$this->PostsComment->save($this->request->data);
-    			$message = '<p class="confirmation">Votre commentaire a bien été prise en compte, il sera diffusé après validation par notre modérateur</p>';
+    			$message = '<p class="confirmation">Votre commentaire a bien été pris en compte, il sera diffusé après validation par notre modérateur</p>';
     			$messageOk = '<p>Votre commentaire a bien été prise en compte, il sera diffusé après validation par notre modérateur</p>';
     			
     			$this->set('message', $message);
