@@ -1045,7 +1045,7 @@ class Model extends Object {
  * @access	public
  * @author	koéZionCMS
  * @version 0.1 - 26/08/2012 by FI
- * @version 0.2 - 04/03/2015 by AJ Rajout d'une condition pour verifier si la page est bien en ligne
+ * @version 0.2 - 04/03/2015 by AJ Rajout d'une condition pour verifier si la page recherchée est bien online sinon on ne l'intègre pas dans la recherche
  */
 	public function make_search_index($datasToSave, $id, $action) {
 		
