@@ -171,6 +171,7 @@ class AppController extends Controller {
  * @version 0.2 - 09/03/2012 by FI - Mise en place de la variable $fields
  * @version 0.3 - 29/05/2012 by FI - Mise en place de la variable $order
  * @version 0.4 - 11/12/2013 by FI - Mise en place de la variable $conditions
+ * @version 0.5 - 16/03/2015 by AJ - Test de l'existence de id ou _id dans les champs du moteur de recherche pour générer les conditions de recherche
  */    
     public function backoffice_index($return = false, $fields = null, $order = null, $conditions = null) {
     	    	
@@ -190,7 +191,7 @@ class AppController extends Controller {
     			
     			if(trim($v) != "") { //Système de poulie lié au fait que empty(0) retourne faux
     				
-    				if($k == 'id') { $searchConditions[] = $k."='".$v."'"; }
+    				if($k == 'id' || substr($k, strlen($k) -3) == '_id') { $searchConditions[] = $k."='".$v."'"; }
     				else { $searchConditions[] = $k." LIKE '%".$v."%'"; }
     			}
     		}
