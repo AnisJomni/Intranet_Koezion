@@ -1,5 +1,13 @@
 ﻿<versions>
 	<version>
+		<name>Version du 16/03/2015</name>
+		<num>20150316.001</num>
+		<supervisor>KoéZionCMS</supervisor>
+		<tasks>
+			<task author="AJ" type="code">Modification de la condition dans app_controller ligne 193 pour savoir si on recherche sur un entier ou sur du texte</task>
+		</tasks>
+	</version>
+	<version>
 		<name>Version du 05/03/2015</name>
 		<num>20150305.001</num>
 		<supervisor>KoéZionCMS</supervisor>
